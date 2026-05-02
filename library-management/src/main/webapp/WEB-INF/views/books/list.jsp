@@ -12,6 +12,7 @@
         tr:hover { background: #f9f4ff; }
         a.btn { background: #8e44ad; color: white; padding: 8px 14px; border-radius: 5px; text-decoration: none; }
         a.btn-green { background: #27ae60; }
+        a.btn-red { background: #e74c3c; }
         .msg-success { background: #d4edda; color: #155724; padding: 10px; border-radius: 5px; margin-bottom: 15px; }
         .msg-error { background: #f8d7da; color: #721c24; padding: 10px; border-radius: 5px; margin-bottom: 15px; }
         nav { margin-bottom: 20px; }
@@ -36,7 +37,10 @@
                 <td>${b.genre}</td>
                 <td>${b.publishedYear}</td>
                 <td>${b.author.name}</td>
-                <td><a href="/books/edit/${b.id}" class="btn">Edit</a></td>
+                <td>
+                    <a href="/books/edit/${b.id}" class="btn">Edit</a>
+                    <a href="/books/delete/${b.id}" class="btn btn-red" onclick="return confirm('Are you sure you want to delete this book?')">Delete</a>
+                </td>
             </tr>
         </c:forEach>
     </table>
